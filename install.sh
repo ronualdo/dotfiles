@@ -12,6 +12,9 @@ sudo add-apt-repository ppa:neovim-ppa/stable -y
 wget https://packages.erlang-solutions.com/erlang-solutions_1.0_all.deb && sudo dpkg -i erlang-solutions_1.0_all.deb
 rm erlang-solutions_1.0_all.deb
 
+# Telegram client
+sudo add-apt-repository ppa:atareao/telegram
+
 # nodejs repository
 curl -sL https://deb.nodesource.com/setup_11.x | sudo -E bash -
 
@@ -30,6 +33,14 @@ sudo apt-get -y install tmux
 sudo apt-get -y install rbenv
 sudo apt-get -y install esl-erlang
 sudo apt-get -y install elixir
+sudo apt-get -y install telegram
+
+# installing slack
+wget https://downloads.slack-edge.com/linux_releases/slack-desktop-3.3.7-amd64.deb --directory-prefix=/tmp
+sudo dpkg -i --force-all /tmp/slack-desktop-3.3.7-amd64.deb
+rm /tmp/slack-desktop-3.3.7-amd64.deb
+
+sudo apt -y --fix-broken install
 
 # fix for rbenv
 sudo apt -y purge libssl-dev && sudo apt install libssl1.0-dev
