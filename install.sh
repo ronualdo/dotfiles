@@ -8,6 +8,10 @@ sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubun
 # nvim apt-repository
 sudo add-apt-repository ppa:neovim-ppa/stable -y
 
+# Erlang Solutions repo
+wget https://packages.erlang-solutions.com/erlang-solutions_1.0_all.deb && sudo dpkg -i erlang-solutions_1.0_all.deb
+rm erlang-solutions_1.0_all.deb
+
 # nodejs repository
 curl -sL https://deb.nodesource.com/setup_11.x | sudo -E bash -
 
@@ -24,6 +28,8 @@ sudo apt-get -y install neovim
 sudo apt-get -y install docker-ce
 sudo apt-get -y install tmux
 sudo apt-get -y install rbenv
+sudo apt-get -y install esl-erlang
+sudo apt-get -y install elixir
 
 # fix for rbenv
 sudo apt -y purge libssl-dev && sudo apt install libssl1.0-dev
