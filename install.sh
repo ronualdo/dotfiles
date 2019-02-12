@@ -33,6 +33,9 @@ rm -rf ~/.oh-my-zsh
 git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
 chsh -s /bin/zsh
 
+# on my zsh plugin
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+
 # config git
 rm -rf ~/.gitconfig
 ln -s $(pwd)/.gitconfig ~/.gitconfig
