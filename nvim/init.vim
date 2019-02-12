@@ -20,7 +20,11 @@ set number
 filetype plugin indent on
 
 " column limit config
-highlight ColorColumn ctermbg=5
+" highlight ColorColumn ctermbg=9
+" highlight ColorColumn ctermbg=4
+" highlight ColorColumn ctermbg=8
+" highlight ColorColumn ctermbg=13
+highlight ColorColumn ctermbg=16
 let &colorcolumn="91"
 
 " Nerdtree settings
