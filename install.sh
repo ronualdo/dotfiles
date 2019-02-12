@@ -1,4 +1,5 @@
 #/usr/bin/env bash
+set -eu
 
 # docker repository
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
@@ -53,8 +54,9 @@ ln -s $(pwd)/.tmux.conf ~/.tmux.conf
 # config zsh
 rm -f ~/.zshrc
 ln -s $(pwd)/.zshrc ~/.zshrc
-source ~/.zshrc
 
 # install ruby
-rbenv install 2.3.4
-rbenv global 2.3.4
+rbenv install -s 2.6.1
+rbenv global 2.6.1
+
+echo 'a restart is required'
