@@ -27,6 +27,9 @@ filetype plugin indent on
 highlight ColorColumn ctermbg=16
 let &colorcolumn="91"
 
+" Automatically format elixir on saving
+let g:mix_format_on_save = 1
+
 " Nerdtree settings
 " close vim if the only window left open is a NERDTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
@@ -77,6 +80,7 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'kchmck/vim-coffee-script'
 Plug 'janko-m/vim-test'
 Plug 'christoomey/vim-tmux-navigator'
+Plug 'mhinz/vim-mix-format'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 call plug#end()
 
