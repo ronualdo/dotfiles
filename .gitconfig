@@ -1,3 +1,7 @@
 [user]
 	email = raxmac@gmail.com
 	name = ronualdo maciel
+[diff]
+	submodule = log
+[status]
+	submodulesummary = 1
