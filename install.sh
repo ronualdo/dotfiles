@@ -34,6 +34,16 @@ sudo apt-get -y install rbenv
 sudo apt-get -y install esl-erlang
 sudo apt-get -y install elixir
 sudo apt-get -y install telegram
+sudo apt-get -y install postgresql-client
+
+# setting user for docker
+sudo usermod -a -G docker $USER
+
+# install docker-compose
+if [ ! -f /usr/local/bin/docker-compose ]; then
+  sudo curl -L "https://github.com/docker/compose/releases/download/1.23.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+  sudo chmod +x /usr/local/bin/docker-compose
+fi
 
 # installing slack
 wget https://downloads.slack-edge.com/linux_releases/slack-desktop-3.3.7-amd64.deb --directory-prefix=/tmp
