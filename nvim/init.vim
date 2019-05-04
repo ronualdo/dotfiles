@@ -20,12 +20,11 @@ set number
 filetype plugin indent on
 
 " column limit config
-" highlight ColorColumn ctermbg=9
-" highlight ColorColumn ctermbg=4
-" highlight ColorColumn ctermbg=8
-" highlight ColorColumn ctermbg=13
 highlight ColorColumn ctermbg=16
-let &colorcolumn="91"
+call matchadd('ColorColumn', '\%91v', 100)
+
+" Adjusting vimdiff
+highlight! link DiffText Todo
 
 " Automatically format elixir on saving
 let g:mix_format_on_save = 1
