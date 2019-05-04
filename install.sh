@@ -15,6 +15,10 @@ rm erlang-solutions_1.0_all.deb
 # Telegram client
 sudo add-apt-repository ppa:atareao/telegram
 
+# Tmate installation
+sudo apt-get install software-properties-common
+sudo add-apt-repository ppa:tmate.io/archive
+
 # nodejs repository
 curl -sL https://deb.nodesource.com/setup_11.x | sudo -E bash -
 
@@ -35,6 +39,8 @@ sudo apt-get -y install esl-erlang
 sudo apt-get -y install elixir
 sudo apt-get -y install telegram
 sudo apt-get -y install postgresql-client
+sudo apt-get -y install libpq-dev
+sudo apt-get -y install tmate
 
 # setting user for docker
 sudo usermod -a -G docker $USER
