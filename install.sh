@@ -16,7 +16,7 @@ rm erlang-solutions_1.0_all.deb
 sudo add-apt-repository ppa:atareao/telegram
 
 # Tmate installation
-sudo apt-get install software-properties-common
+sudo apt-get -y install software-properties-common
 sudo add-apt-repository ppa:tmate.io/archive
 
 # nodejs repository
@@ -41,6 +41,7 @@ sudo apt-get -y install telegram
 sudo apt-get -y install postgresql-client
 sudo apt-get -y install libpq-dev
 sudo apt-get -y install tmate
+sudo apt-get -y install fonts-hack-ttf # hack font
 
 # setting user for docker
 sudo usermod -a -G docker $USER
@@ -68,6 +69,7 @@ chsh -s /bin/zsh
 
 # on my zsh plugin
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 
 # config git
 rm -rf ~/.gitconfig
