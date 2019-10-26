@@ -94,5 +94,13 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+#functions
+fpath=(~/functions $fpath)
+autoload cdmux tabmux
+
 export PATH="$HOME/.rbenv/bin:$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
+
+alias dexec='docker-compose exec'
+alias pexec='dexec portal'

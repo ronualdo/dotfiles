@@ -90,6 +90,7 @@ ln -s $(pwd)/.tmux.conf ~/.tmux.conf
 # config zsh
 rm -f ~/.zshrc
 ln -s $(pwd)/.zshrc ~/.zshrc
+ln -s $(pwd)/functions ~/functions
 
 # install ruby
 rbenv install -s 2.6.1
