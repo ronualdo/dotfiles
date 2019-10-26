@@ -1,3 +1,27 @@
+" plugins
+call plug#begin('~/.local/share/nvim/plugged')
+Plug 'scrooloose/nerdtree'
+Plug 'tpope/vim-bundler'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-endwise'
+Plug 'mattn/emmet-vim'
+Plug 'eugen0329/vim-esearch'
+Plug 'itchyny/lightline.vim'
+Plug 'tpope/vim-fugitive'
+Plug 'cloudhead/neovim-fuzzy'
+Plug 'slashmili/alchemist.vim'
+Plug 'elixir-editors/vim-elixir'
+Plug 'neomake/neomake'
+Plug 'editorconfig/editorconfig-vim'
+Plug 'kchmck/vim-coffee-script'
+Plug 'janko-m/vim-test'
+Plug 'christoomey/vim-tmux-navigator'
+Plug 'mhinz/vim-mix-format'
+Plug 'dracula/vim', { 'as': 'dracula' }
+Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }}
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+call plug#end()
+
 "indent settings
 set shiftwidth=2
 set softtabstop=2
@@ -69,30 +93,6 @@ autocmd! BufWritePost * Neomake
 let g:neomake_javascript_enabled_makers=['standard']
 let g:neomake_python_enabled_makers=['flake8']
 let g:neomake_ruby_enabled_makers=['rubocop', 'reek', 'mri']
-
-" plugins
-call plug#begin('~/.local/share/nvim/plugged')
-Plug 'scrooloose/nerdtree'
-Plug 'tpope/vim-bundler'
-Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-endwise'
-Plug 'mattn/emmet-vim'
-Plug 'eugen0329/vim-esearch'
-Plug 'itchyny/lightline.vim'
-Plug 'tpope/vim-fugitive'
-Plug 'cloudhead/neovim-fuzzy'
-Plug 'slashmili/alchemist.vim'
-Plug 'elixir-editors/vim-elixir'
-Plug 'neomake/neomake'
-Plug 'editorconfig/editorconfig-vim'
-Plug 'kchmck/vim-coffee-script'
-Plug 'janko-m/vim-test'
-Plug 'christoomey/vim-tmux-navigator'
-Plug 'mhinz/vim-mix-format'
-Plug 'dracula/vim', { 'as': 'dracula' }
-Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }}
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-call plug#end()
 
 " Mappings
 map <F2> :NERDTreeToggle<CR>
