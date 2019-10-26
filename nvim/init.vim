@@ -15,9 +15,18 @@ set splitbelow
 set splitright
 
 " general editor settings
+colo dracula
 syntax on
-set number
 filetype plugin indent on
+set nohlsearch
+
+" setting line numbers
+set number relativenumber
+augroup numbertoggle
+  autocmd!
+  autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
+  autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
+augroup END
 
 " column limit config
 highlight ColorColumn ctermbg=16
