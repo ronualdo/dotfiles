@@ -1,0 +1,10 @@
+cdmux() {
+  cd $1
+  folder_name="${PWD##*/}"
+  tmux has-session -t $folder_name
+  if [ $? -eq 0 ]; then
+    tmux attach -t $folder_name
+  else
+    tmux new -s $folder_name
+  fi
+}

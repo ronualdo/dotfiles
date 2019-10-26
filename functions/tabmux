@@ -1,0 +1,4 @@
+tabmux() {
+  tmux set-hook client-detached 'display-message -p "hi"; set-hook -u client-detached'
+  tmux detach-client
+}
