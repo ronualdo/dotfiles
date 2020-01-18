@@ -43,6 +43,9 @@ sudo apt-get -y install libpq-dev
 sudo apt-get -y install tmate
 sudo apt-get -y install fonts-hack-ttf # hack font
 
+# install neovim-remote
+pip3 install neovim-remote
+
 # setting user for docker
 sudo usermod -a -G docker $USER
 
@@ -66,6 +69,10 @@ sudo apt -y purge libssl-dev && sudo apt install libssl1.0-dev
 rm -rf ~/.oh-my-zsh
 git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
 chsh -s /bin/zsh
+
+# config oh-my-zsh
+rm -rf ~/.oh-my-zsh/custom
+ln -s $(pwd)/custom ~/.oh-my-zsh/custom
 
 # on my zsh plugin
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
@@ -93,6 +100,7 @@ ln -s $(pwd)/.tmux.conf ~/.tmux.conf
 rm -f ~/.zshrc
 ln -s $(pwd)/.zshrc ~/.zshrc
 ln -s $(pwd)/functions ~/functions
+ln -s $(pwd)/zsh_custom ~/zsh_custom
 
 # install ruby
 rbenv install -s 2.6.1

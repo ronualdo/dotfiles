@@ -20,6 +20,7 @@ Plug 'mhinz/vim-mix-format'
 Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }}
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'brettanomyces/nvim-editcommand'
 call plug#end()
 
 "indent settings
@@ -88,16 +89,23 @@ let NERDTreeQuitOnOpen=1
 " vim-test config
 let test#strategy = "neovim"
 
+" config git editor
+"if has('nvim')
+"  let $GIT_EDITOR = 'nvr -cc split --remote-wait'
+"endif
+"autocmd FileType gitcommit,gitrebase,gitconfig set bufhidden=delete
+
 " neomake config
 autocmd! BufWritePost * Neomake
-let g:neomake_javascript_enabled_makers=['standard']
+let g:neomake_javascript_enabled_makers=['eslint']
 let g:neomake_python_enabled_makers=['flake8']
 let g:neomake_ruby_enabled_makers=['rubocop', 'reek', 'mri']
+let g:neomake_elixir_enabled_makers = ['elixir']
 
 " Mappings
-map <F2> :NERDTreeToggle<CR>
-nmap <tab> :tabnext<CR>
-nmap <S-tab> :tabprevious<CR>
+noremap <F2> :NERDTreeToggle<CR>
+nnoremap <tab> :tabnext<CR>
+nnoremap <S-tab> :tabprevious<CR>
 nnoremap <C-p> :FuzzyOpen<CR>
 tnoremap <Esc> <C-\><C-n>
 " " Copy to clipboard
@@ -111,12 +119,12 @@ nnoremap <leader>P "+P
 vnoremap <leader>p "+p
 vnoremap <leader>P "+P
 " vim-test mappings
-nmap <silent> <leader>t :TestNearest<CR>
-nmap <silent> <leader>T :TestFile<CR>
-nmap <silent> <leader>a :TestSuite<CR>
-nmap <silent> <leader>l :TestLast<CR>
-nmap <silent> <leader>g :TestVisit<CR>
-tmap <C-o> <C-\><C-n>
+nnoremap <silent> <leader>t :TestNearest<CR>
+nnoremap <silent> <leader>T :TestFile<CR>
+nnoremap <silent> <leader>a :TestSuite<CR>
+nnoremap <silent> <leader>l :TestLast<CR>
+nnoremap <silent> <leader>g :TestVisit<CR>
+tnoremap <C-o> <C-\><C-n>
 " easy pane navigations
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>

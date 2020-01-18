@@ -1,0 +1,3 @@
+dcrestart() {
+  docker-compose stop $1 && docker-compose up -d
+}

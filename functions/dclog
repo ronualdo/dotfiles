@@ -1,0 +1,3 @@
+dclog() {
+  docker-compose logs --follow $1
+}

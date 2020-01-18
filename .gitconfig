@@ -5,3 +5,5 @@
 	submodule = log
 [status]
 	submodulesummary = 1
+[core]
+	editor = nvim
