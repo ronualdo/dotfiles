@@ -5,7 +5,8 @@ Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-fugitive'
 Plug 'mattn/emmet-vim'
 Plug 'itchyny/lightline.vim'
-Plug 'cloudhead/neovim-fuzzy'
+" Plug 'cloudhead/neovim-fuzzy'
+Plug 'ctrlpvim/ctrlp.vim'
 Plug 'slashmili/alchemist.vim'
 Plug 'elixir-editors/vim-elixir'
 Plug 'mhinz/vim-mix-format'
@@ -86,11 +87,14 @@ let NERDTreeQuitOnOpen=1
 " vim-test config
 let test#strategy = "neovim"
 
+" ctrlp config
+let g:ctrlp_cmd = 'CtrlPMixed'
+
 " config git editor
 "if has('nvim')
 "  let $GIT_EDITOR = 'nvr -cc split --remote-wait'
 "endif
-"autocmd FileType gitcommit,gitrebase,gitconfig set bufhidden=delete
+"autocmd FileType gitcommit,gitrebase,gitconfig set bufhidden=delete 
 
 " neomake config
 autocmd! BufWritePost * Neomake
