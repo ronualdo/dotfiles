@@ -57,56 +57,15 @@ call matchadd('ColorColumn', '\%91v', 100)
 " Adjusting vimdiff
 highlight! link DiffText Todo
 
-" Automatically format elixir on saving
-let g:mix_format_on_save = 1
-let g:alchemist#elixir_erlang_src = "/usr/local/share/src"
-
-" Nerdtree settings
-" close vim if the only window left open is a NERDTree
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-
-" lightline config
-set noshowmode
-let g:lightline = {
-      \ 'colorscheme': 'wombat',
-      \ 'active': {
-      \   'left': [ [ 'mode', 'paste' ],
-      \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
-      \ },
-      \ 'component_function': {
-      \   'gitbranch': 'fugitive#head'
-      \ },
-      \ }
-
-" deoplete config
-let g:deoplete#enable_at_startup = 1
-
-" nerdtree config
-let NERDTreeQuitOnOpen=1
-
-" vim-test config
-let test#strategy = "neovim"
-
-" ctrlp config
-let g:ctrlp_cmd = 'CtrlPMixed'
-
 " config git editor
 "if has('nvim')
 "  let $GIT_EDITOR = 'nvr -cc split --remote-wait'
 "endif
 "autocmd FileType gitcommit,gitrebase,gitconfig set bufhidden=delete 
 
-" neomake config
-autocmd! BufWritePost * Neomake
-let g:neomake_javascript_enabled_makers=['eslint']
-let g:neomake_python_enabled_makers=['flake8']
-let g:neomake_ruby_enabled_makers=['rubocop', 'reek', 'mri']
-let g:neomake_elixir_enabled_makers = ['elixir']
-
 " Mappings
-noremap <F2> :NERDTreeToggle<CR>
-nnoremap <tab> :tabnext<CR>
-nnoremap <S-tab> :tabprevious<CR>
+nnoremap <tab> :bnext<CR>
+nnoremap <S-tab> :bprevious<CR>
 nnoremap <C-p> :FuzzyOpen<CR>
 tnoremap <Esc> <C-\><C-n>
 " " Copy to clipboard
@@ -119,31 +78,15 @@ nnoremap <leader>p "+p
 nnoremap <leader>P "+P
 vnoremap <leader>p "+p
 vnoremap <leader>P "+P
-" vim-test mappings
-nnoremap <silent> <leader>t :TestNearest<CR>
-nnoremap <silent> <leader>T :TestFile<CR>
-nnoremap <silent> <leader>a :TestSuite<CR>
-nnoremap <silent> <leader>l :TestLast<CR>
-nnoremap <silent> <leader>g :TestVisit<CR>
-tnoremap <C-o> <C-\><C-n>
 " easy pane navigations
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
-let g:docker_compose_proj_mapping = {'micro-service-portal': 'portal'}
-
-" my functions
-function! DockerComposeTransform(cmd) abort
-  let l:root_folder = get(split(getcwd(), '/'), -1, '')
-
-  if empty(glob('docker-compose.yml'))
-    return a:cmd
-  else
-    return "docker-compose exec ". get(g:docker_compose_proj_mapping, l:root_folder, '') . ' '. a:cmd
-  endif
-endfunction
-
-let g:test#custom_transformations = {'docker_compose': function('DockerComposeTransform')}
-let g:test#transformation = 'docker_compose'
+nnoremap <leader>spc :sp term://zsh<CR>i
+nnoremap <leader>ttn :tabnew<CR>
+nnoremap <leader>ttc :tabnew term://zsh<CR>i
+nnoremap <leader>tn :tabnext<CR>
+nnoremap <leader>tp :tabprevious<CR>
+nnoremap <leader>vsc :vsp term://zsh<CR>i
