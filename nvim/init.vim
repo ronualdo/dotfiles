@@ -1,23 +1,19 @@
 " plugins
 call plug#begin('~/.local/share/nvim/plugged')
 Plug 'scrooloose/nerdtree'
-Plug 'tpope/vim-bundler'
-Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-endwise'
-Plug 'mattn/emmet-vim'
-Plug 'eugen0329/vim-esearch'
-Plug 'itchyny/lightline.vim'
 Plug 'tpope/vim-fugitive'
+Plug 'mattn/emmet-vim'
+Plug 'itchyny/lightline.vim'
 Plug 'cloudhead/neovim-fuzzy'
 Plug 'slashmili/alchemist.vim'
 Plug 'elixir-editors/vim-elixir'
-Plug 'neomake/neomake'
-Plug 'editorconfig/editorconfig-vim'
-Plug 'kchmck/vim-coffee-script'
-Plug 'janko-m/vim-test'
-Plug 'christoomey/vim-tmux-navigator'
 Plug 'mhinz/vim-mix-format'
+Plug 'janko-m/vim-test'
+Plug 'neomake/neomake'
+Plug 'christoomey/vim-tmux-navigator'
 Plug 'dracula/vim', { 'as': 'dracula' }
+Plug 'eugen0329/vim-esearch'
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }}
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'brettanomyces/nvim-editcommand'
@@ -62,6 +58,7 @@ highlight! link DiffText Todo
 
 " Automatically format elixir on saving
 let g:mix_format_on_save = 1
+let g:alchemist#elixir_erlang_src = "/usr/local/share/src"
 
 " Nerdtree settings
 " close vim if the only window left open is a NERDTree
