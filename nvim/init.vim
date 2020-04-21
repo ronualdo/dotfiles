@@ -5,9 +5,9 @@ Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-fugitive'
 Plug 'mattn/emmet-vim'
 Plug 'itchyny/lightline.vim'
-" Plug 'cloudhead/neovim-fuzzy'
-Plug 'ctrlpvim/ctrlp.vim'
 Plug 'slashmili/alchemist.vim'
+Plug 'junegunn/fzf', { 'do': '~/.fzf/bin/fzf' }
+Plug 'junegunn/fzf.vim'
 Plug 'elixir-editors/vim-elixir'
 Plug 'mhinz/vim-mix-format'
 Plug 'janko-m/vim-test'
@@ -18,6 +18,7 @@ Plug 'eugen0329/vim-esearch'
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }}
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'brettanomyces/nvim-editcommand'
+Plug 'sheerun/vim-polyglot'
 call plug#end()
 
 "indent settings
@@ -64,9 +65,8 @@ highlight! link DiffText Todo
 "autocmd FileType gitcommit,gitrebase,gitconfig set bufhidden=delete 
 
 " Mappings
-nnoremap <tab> :bnext<CR>
-nnoremap <S-tab> :bprevious<CR>
-nnoremap <C-p> :FuzzyOpen<CR>
+
+nnoremap <S-tab> :tabprevious<CR>
 tnoremap <Esc> <C-\><C-n>
 " " Copy to clipboard
 vnoremap  <leader>y  "+y
@@ -84,9 +84,9 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
+nnoremap <leader>b :Buffers<CR>
+nnoremap <leader>fg :Files<CR>
 nnoremap <leader>spc :sp term://zsh<CR>i
 nnoremap <leader>ttn :tabnew<CR>
 nnoremap <leader>ttc :tabnew term://zsh<CR>i
-nnoremap <leader>tn :tabnext<CR>
-nnoremap <leader>tp :tabprevious<CR>
 nnoremap <leader>vsc :vsp term://zsh<CR>i
