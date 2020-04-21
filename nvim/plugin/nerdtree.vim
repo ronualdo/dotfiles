@@ -5,3 +5,4 @@ let NERDTreeQuitOnOpen=1
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 noremap <F2> :NERDTreeToggle<CR>
+nnoremap <silent> <leader>ntf :NERDTreeFind<CR>
