@@ -1,0 +1,8 @@
+search_dockerhub() {
+  if [ $1 = "-o" ]
+  then
+    curl -s "https://hub.docker.com/api/content/v1/products/search?image_filter=official&q=$2&page=1&page_size=10" | jq -r '.summaries[]["name"]'
+  else
+    curl -s "https://hub.docker.com/api/content/v1/products/search?source=community&q=$1&page=1&page_size=10" | jq -r '.summaries[]["name"]'
+  fi
+}
