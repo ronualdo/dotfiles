@@ -58,14 +58,7 @@ call matchadd('ColorColumn', '\%91v', 100)
 " Adjusting vimdiff
 highlight! link DiffText Todo
 
-" config git editor
-"if has('nvim')
-"  let $GIT_EDITOR = 'nvr -cc split --remote-wait'
-"endif
-"autocmd FileType gitcommit,gitrebase,gitconfig set bufhidden=delete 
-
 " Mappings
-
 nnoremap <S-tab> :tabprevious<CR>
 tnoremap <Esc> <C-\><C-n>
 " " Copy to clipboard
