@@ -59,6 +59,7 @@ call matchadd('ColorColumn', '\%91v', 100)
 highlight! link DiffText Todo
 
 " Mappings
+nnoremap <tab> :tabnext<CR>
 nnoremap <S-tab> :tabprevious<CR>
 tnoremap <Esc> <C-\><C-n>
 " " Copy to clipboard
