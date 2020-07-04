@@ -99,7 +99,7 @@ source $ZSH/oh-my-zsh.sh
 fpath=(~/functions $fpath)
 autoload cdmux dclog tabmux dcrestart search_dockerhub fetch_tags_dockerhub
 
-export PATH="$HOME/.rbenv/bin:$HOME/.rbenv/bin:$PATH"
+export PATH="$HOME/.rbenv/bin:$HOME/.rbenv/bin:$HOME/.cargo/bin:$PATH"
 eval "$(rbenv init -)"
 
 export NVM_DIR="$HOME/.nvm"
