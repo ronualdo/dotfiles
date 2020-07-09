@@ -1,5 +1,5 @@
 # adds env vars for docker-compose
-alias docker-compose="CURRENT_UID=$(id -u):$(id -g) DOCKERHOST=$(ifconfig | grep -E '([0-9]{1,3}\.){3}[0-9]{1,3}' | grep -v 127.0.0.1 | awk '{ print $2 }' | cut -f2 -d: | head -n1) docker-compose"
+alias docker-compose="CURRENT_UID=$(id -u):$(id -g) DOCKERHOST=$(ip -4 addr show docker0 | grep -Po 'inet \K[\d.]+') SSH_PRIVATE_KEY=\"$(cat ~/.ssh/id_rsa)\" docker-compose"
 
 alias dcexec="docker-compose exec"
 alias dclog="docker-compose logs --follow"
