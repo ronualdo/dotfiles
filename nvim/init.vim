@@ -21,6 +21,9 @@ Plug 'brettanomyces/nvim-editcommand'
 Plug 'sheerun/vim-polyglot'
 call plug#end()
 
+" set colours
+set t_Co=256
+
 "indent settings
 set shiftwidth=2
 set softtabstop=2

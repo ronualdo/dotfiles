@@ -8,8 +8,8 @@
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-# ZSH_THEME="avit" removing cause imcompatible with dracula
-ZSH_THEME="steeef"
+ZSH_THEME="avit" # removing cause imcompatible with dracula
+# ZSH_THEME="steeef"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -100,9 +100,13 @@ source $ZSH/oh-my-zsh.sh
 fpath=(~/functions $fpath)
 autoload cdmux dclog tabmux dcrestart search_dockerhub fetch_tags_dockerhub
 
-export PATH="$HOME/.rbenv/bin:$HOME/.rbenv/bin:$HOME/.cargo/bin:$PATH"
+export PATH="$HOME/.rbenv/bin:$HOME/.rbenv/bin:$HOME/.cargo/bin:$PATH:$HOME/go/bin"
 eval "$(rbenv init -)"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 
+if [[ -a $HOME/.macos ]]
+then
+  source "$HOME/.macos"
+fi
