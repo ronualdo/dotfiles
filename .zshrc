@@ -7,6 +7,7 @@ export FZF_DEFAULT_COMMAND='rg --files .'
 
 export UID=$(id -u)
 export GID=$(id -g)
+export FZF_DEFAULT_COMMAND='ag -l'
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
