@@ -102,6 +102,7 @@ fpath=(~/functions $fpath)
 autoload cdmux dclog tabmux dcrestart search_dockerhub fetch_tags_dockerhub
 
 export PATH="$HOME/.rbenv/bin:$HOME/.rbenv/bin:$HOME/.cargo/bin:$PATH:$HOME/go/bin"
+export DISABLE_DATABASE_ENVIRONMENT_CHECK=1 # rails database check
 eval "$(rbenv init -)"
 
 export NVM_DIR="$HOME/.nvm"
