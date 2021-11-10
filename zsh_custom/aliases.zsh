@@ -5,3 +5,8 @@ alias dcexec="docker-compose exec"
 alias dclog="docker-compose logs --follow"
 alias dcps="docker-compose ps"
 alias dcfull="docker-compose -f full-docker-compose.yml"
+
+# kindbody alias
+alias calendar="docker-compose exec calendar"
+alias generations="docker-compose exec generations"
+alias transitions="docker-compose exec transitions"
