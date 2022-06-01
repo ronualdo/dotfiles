@@ -1,3 +1,4 @@
 zsh_custom/plugins/zsh-autosuggestions
 zsh_custom/plugins/zsh-syntax-highlighting
 nvim/.netrwhist
+plug.nvim.old
