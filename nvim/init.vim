@@ -22,7 +22,7 @@ Plug 'sheerun/vim-polyglot'
 call plug#end()
 
 " set colours
-set t_Co=256
+set termguicolors
 
 "indent settings
 set shiftwidth=2
