@@ -5,10 +5,9 @@ Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-fugitive'
 Plug 'mattn/emmet-vim'
 Plug 'itchyny/lightline.vim'
-Plug 'slashmili/alchemist.vim'
+Plug 'slashmili/alchemist.vim' " do I need this?
 Plug 'junegunn/fzf', { 'do': '~/.fzf/bin/fzf' }
 Plug 'junegunn/fzf.vim'
-Plug 'elixir-editors/vim-elixir'
 Plug 'mhinz/vim-mix-format'
 Plug 'janko-m/vim-test'
 Plug 'neomake/neomake'
@@ -29,6 +28,10 @@ set shiftwidth=2
 set softtabstop=2
 set expandtab
 set autoindent
+
+" setup nvim-editcommand
+" default mapping <c-x><c-e>
+let g:editcommand_prompt = '▶'
 
 " Turn backup off, since most stuff is in SVN, git et.c anyway...
 set nobackup
