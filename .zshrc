@@ -12,6 +12,9 @@ export FZF_DEFAULT_COMMAND='rg --files .'
 ZSH_THEME="avit" # removing cause imcompatible with dracula
 # ZSH_THEME="steeef"
 
+bindkey -v
+export KEYTIMEOUT=1
+
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
 # a theme from this variable instead of looking in ~/.oh-my-zsh/themes/
@@ -48,6 +51,15 @@ ZSH_THEME="avit" # removing cause imcompatible with dracula
 # much, much faster.
 # DISABLE_UNTRACKED_FILES_DIRTY="true"
 
+# VIM MODE OPTIONS
+VI_MODE_RESET_PROMPT_ON_MODE_CHANGE=true
+VI_MODE_SET_CURSOR=true
+
+# edit-command-line config
+autoload edit-command-line
+zle -N edit-command-line
+bindkey -M vicmd v edit-command-line
+
 # Uncomment the following line if you want to change the command execution time
 # stamp shown in the history command output.
 # You can set one of the optional three formats:
@@ -64,7 +76,7 @@ ZSH_CUSTOM=~/zsh_custom
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
+plugins=(git zsh-autosuggestions zsh-syntax-highlighting vi-mode)
 
 source $ZSH/oh-my-zsh.sh
 

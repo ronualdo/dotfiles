@@ -14,7 +14,6 @@ Plug 'neomake/neomake'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'eugen0329/vim-esearch'
-Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }}
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'brettanomyces/nvim-editcommand'
 Plug 'sheerun/vim-polyglot'
@@ -32,6 +31,7 @@ set autoindent
 " setup nvim-editcommand
 " default mapping <c-x><c-e>
 let g:editcommand_prompt = '▶'
+tmap <c-v> <Plug>EditCommand
 
 " Turn backup off, since most stuff is in SVN, git et.c anyway...
 set nobackup
