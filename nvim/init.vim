@@ -29,9 +29,10 @@ set expandtab
 set autoindent
 
 " setup nvim-editcommand
+" It is not working when we try to open another pane
 " default mapping <c-x><c-e>
-let g:editcommand_prompt = '▶'
-tmap <c-v> <Plug>EditCommand
+"let g:editcommand_prompt = '▶'
+"tmap <c-v> <Plug>EditCommand
 
 " Turn backup off, since most stuff is in SVN, git et.c anyway...
 set nobackup
