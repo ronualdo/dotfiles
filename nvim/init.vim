@@ -14,9 +14,11 @@ Plug 'neomake/neomake'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'eugen0329/vim-esearch'
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }}
 Plug 'brettanomyces/nvim-editcommand'
 Plug 'sheerun/vim-polyglot'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'vim-ruby/vim-ruby'
 call plug#end()
 
 " set colours
@@ -49,6 +51,8 @@ colo dracula
 syntax on
 filetype plugin indent on
 set nohlsearch
+set foldmethod=syntax
+set nofoldenable
 
 " setting line numbers
 set number relativenumber
@@ -64,6 +68,8 @@ call matchadd('ColorColumn', '\%91v', 100)
 
 " Adjusting vimdiff
 highlight! link DiffText Todo
+
+let g:coc_global_extensions = [ 'coc-solargraph' ]
 
 " Mappings
 nnoremap <tab> :tabnext<CR>
