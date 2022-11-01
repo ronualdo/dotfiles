@@ -30,3 +30,6 @@ endfunction
 
 " Use K to show documentation in preview window.
 nnoremap <silent> K :call ShowDocumentation()<CR>
+
+" 
+let g:coc_global_extensions = ['coc-json', 'coc-snippets', 'coc-solargraph']
