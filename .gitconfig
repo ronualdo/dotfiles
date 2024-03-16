@@ -14,3 +14,7 @@
 	command = ~/Workspace/git-diff-image/git_diff_image
 [pull]
 	rebase = false
+[tag]
+	forceSignAnnotated = true
+[commit]
+	gpgSign = true
