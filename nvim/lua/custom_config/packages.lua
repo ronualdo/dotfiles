@@ -41,6 +41,9 @@ telescope = {
   dependencies = { 'nvim-lua/plenary.nvim' }
 }
 
+-- optional telescope dependency
+telescope_fzf_native = { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' }
+
 -- close end blocks for ruby
 nvim_tree_sitter_endwise = "RRethy/nvim-treesitter-endwise"
 
@@ -81,6 +84,7 @@ require("lazy").setup({
   nvim_tree_sitter,
   nvim_tree_sitter_endwise,
   telescope,
+  telescope_fzf_native,
   tmux_navigator,
   vim_slim,
   vim_test
