@@ -9,6 +9,14 @@ export UID=$(id -u)
 export GID=$(id -g)
 export FZF_DEFAULT_COMMAND='ag -l'
 
+# configuring gpg for ssh
+export GPG_TTY="$(tty)"
+export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
+gpgconf --launch gpg-agent
+
+# asdf config
+. "$HOME/.asdf/asdf.sh"
+
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
