@@ -18,3 +18,5 @@
 	forceSignAnnotated = true
 [commit]
 	gpgSign = true
+[init]
+	defaultBranch = main
