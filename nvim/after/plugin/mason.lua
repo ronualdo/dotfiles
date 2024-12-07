@@ -43,7 +43,11 @@ local lsp_attach = function(client, bufnr)
   vim.keymap.set("n", "[d", function() vim.diagnostic.goto_next() end, {buffer = bufnr, remap = false})
   vim.keymap.set("n", "]d", function() vim.diagnostic.goto_prev() end, {buffer = bufnr, remap = false})
   vim.keymap.set("n", "<leader>vca", function() vim.lsp.buf.code_action() end, {buffer = bufnr, remap = false})
-  vim.keymap.set("n", "<leader>vrr", function() vim.lsp.buf.references() end, {buffer = bufnr, remap = false})
+  vim.keymap.set("n", "<leader>vrr", function() vim.lsp.buf.references() end, {
+    buffer = bufnr,
+    remap = false,
+    desc = 'Find references'
+  })
   vim.keymap.set("n", "<leader>vrn", function() vim.lsp.buf.rename() end, {
     buffer = bufnr,
     remap = false,
