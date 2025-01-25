@@ -69,8 +69,13 @@ dispatch = "tpope/vim-dispatch"
 
 emmet = "mattn/emmet-vim"
 
+luasnip = "L3MON4D3/LuaSnip"
+
+cmp_luasnip = "saadparwaiz1/cmp_luasnip"
+
 require("lazy").setup({
   cmp,
+  cmp_luasnip,
   cmp_nvim,
   cmp_nvim_lsp,
   dispatch,
@@ -79,6 +84,7 @@ require("lazy").setup({
   fugitive,
   lightline,
   lsp_config,
+  luasnip,
   mason,
   mason_lsp_config,
   nvim_tree_sitter,
