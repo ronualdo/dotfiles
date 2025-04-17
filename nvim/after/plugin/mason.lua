@@ -1,12 +1,14 @@
 require('mason').setup()
 
-require('mason-lspconfig').setup({
-  ensure_installed = {
-    'rust_analyzer',
-    'tsserver',
-    'solargraph',
-    'omnisharp_mono'
-  }
+local mason_lspconfig = require('mason-lspconfig')
+local servers = {
+  solargraph = {},
+  rust_analyzer = {},
+  tsserver = {},
+}
+
+mason_lspconfig.setup({
+  ensure_installed = vim.tbl_keys(servers)
 })
 
 local lsp_capabilities = require('cmp_nvim_lsp').default_capabilities()
@@ -61,21 +63,13 @@ local lsp_attach = function(client, bufnr)
 end
 
 local lspconfig = require('lspconfig')
-require('mason-lspconfig').setup_handlers({
+mason_lspconfig.setup_handlers({
   function(server_name)
     lspconfig[server_name].setup({
       on_attach = lsp_attach,
       capabilities = lsp_capabilities,
+      settings = servers[server_name],
+      filetypes = (servers[server_name] or {}).filetypes,
     })
   end,
-  ["omnisharp_mono"] = function()
-    local pid = vim.fn.getpid()
-
-    require('lspconfig').omnisharp.setup({
-      cmd = { "omnisharp-mono", "--languageserver" , "--hostPID", "--verbose", tostring(pid) };
-      root_dir = lspconfig.util.root_pattern("*.csproj","*.sln");
-      on_attach = lsp_attach;
-      capabilities = lsp_capabilities;
-    })
-  end
 })
