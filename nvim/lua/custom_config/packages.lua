@@ -17,15 +17,20 @@ avante = {
   event = "VeryLazy",
   version = false, -- Set this to "*" to always pull the latest release version, or set it to false to update to the latest code changes.
   opts = {
-    provider = "local-deepseek",
-    vendors = {
-      ["local-deepseek"] = {
-        __inherited_from = 'openai',
-        endpoint = "http://127.0.0.1:11434/v1",
-        -- model = 'deepseek/deepseek-r1',
-        model = 'deepseek-r1:7b',
-        disable_tools = true
-      }
+    -- provider = "local-deepseek",
+    -- vendors = {
+    --   ["local-deepseek"] = {
+    --     __inherited_from = 'openai',
+    --     endpoint = "http://127.0.0.1:11434/v1",
+    --     -- model = 'deepseek/deepseek-r1',
+    --     model = 'deepseek-r1:7b',
+    --     disable_tools = true
+    --   }
+    -- }
+    debug = true,
+    provider = "ollama",
+    ollama = {
+      model = "deepseek-coder:6.7b"
     }
   },
   -- if you want to build from source then do `make BUILD_FROM_SOURCE=true`
