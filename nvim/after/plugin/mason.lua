@@ -14,19 +14,6 @@ mason_lspconfig.setup({
 local lsp_capabilities = require('cmp_nvim_lsp').default_capabilities()
 
 local lsp_attach = function(client, bufnr)
-  -- workaround for issue
-  -- https://github.com/OmniSharp/omnisharp-roslyn/issues/2483
-  if client.name == 'omnisharp' then
-    local tokenModifiers = client.server_capabilities.semanticTokensProvider.legend.tokenModifiers
-    for i, v in ipairs(tokenModifiers) do
-      tokenModifiers[i] = v:gsub(' ', '_')
-    end
-    local tokenTypes = client.server_capabilities.semanticTokensProvider.legend.tokenTypes
-    for i, v in ipairs(tokenTypes) do
-      tokenTypes[i] = v:gsub(' ', '_')
-    end
-  end
-
   -- mappings
   vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, {
     buffer = bufnr,
