@@ -29,8 +29,10 @@ avante = {
     -- }
     debug = true,
     provider = "ollama",
+    cursor_applying_provider = 'ollama',
     ollama = {
-      model = "deepseek-coder:6.7b"
+      -- model = "deepseek-coder:6.7b"
+      model = "qwen2.5-coder:7b"
     }
   },
   -- if you want to build from source then do `make BUILD_FROM_SOURCE=true`
